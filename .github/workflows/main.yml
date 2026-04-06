@@ -20,5 +20,5 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker build -t ${{ secrets.ACR_REGISTRY }}/${{ secrets.ACR_REPOSITORY }}/jgy-test:${{ github.sha }} .
-        docker push ${{ secrets.ACR_REGISTRY }}/${{ secrets.ACR_REPOSITORY }}/jgy-test:${{ github.sha }}
+        docker build -t ${{ secrets.ACR_REGISTRY }}/${{ secrets.ACR_REPOSITORY }}:${{ github.sha }} .
+        docker push ${{ secrets.ACR_REGISTRY }}/${{ secrets.ACR_REPOSITORY }}:${{ github.sha }}
