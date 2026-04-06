@@ -14,19 +14,6 @@ spec:
     spec:
       containers:
       - name: my-web-app
-        # [레지스트리 주소]/[네임스페이스/레포이름]:[방금 성공한 태그]
         image: devops-test-acr-registry.ap-southeast-1.cr.aliyuncs.com/jgy-test/jgy-test:b8cbd93440663a9b30e32a455c247e2243456afa
         ports:
         - containerPort: 80
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-web-service
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 80
-    targetPort: 80
-  selector:
-    app: my-web-app
